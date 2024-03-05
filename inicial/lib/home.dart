@@ -39,6 +39,10 @@ class _MyHomePageState extends State<MyHomePage> {
             )
           ],
         ),
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {},
+          child: Icon(Icons.refresh),
+        ),
         body: Row(children: [Text('texto')]));
   }
 }
