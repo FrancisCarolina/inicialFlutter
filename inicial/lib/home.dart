@@ -19,12 +19,11 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text('Aula Hoje'),
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
       ),
-      body: ElevatedButton.icon(
-        icon: Icon(Icons.add_alert_outlined),
+      body: ElevatedButton(
         onPressed: () {},
-        label: Text('Dispositivos Moveis'),
+        child: Text('Dispositivos Moveis'),
         style: ElevatedButton.styleFrom(
-            padding: EdgeInsets.symmetric(horizontal: 80),
+            padding: EdgeInsets.all(30),
             backgroundColor: Colors.amber,
             foregroundColor: Colors.purple,
             textStyle: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
