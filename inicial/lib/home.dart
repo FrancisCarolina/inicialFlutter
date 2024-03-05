@@ -15,16 +15,23 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Aula Hoje'),
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-      ),
-      body: FloatingActionButton(
-        onPressed: () {},
-        child: Column(
-          children: [Text("Teste"), Icon(Icons.bakery_dining)],
+        appBar: AppBar(
+          title: Text('Aula Hoje'),
+          backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         ),
-      ),
-    );
+        body: Column(
+          children: [
+            SizedBox(height: 10),
+            FloatingActionButton(
+              onPressed: () {},
+              child: Icon(Icons.water),
+            ),
+            SizedBox(height: 10),
+            FloatingActionButton(
+              onPressed: () {},
+              child: Icon(Icons.add),
+            ),
+          ],
+        ));
   }
 }
