@@ -19,7 +19,16 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text('Aula Hoje'),
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
       ),
-      body: Container(),
+      body: ElevatedButton.icon(
+        icon: Icon(Icons.add_alert_outlined),
+        onPressed: () {},
+        label: Text('Dispositivos Moveis'),
+        style: ElevatedButton.styleFrom(
+            padding: EdgeInsets.symmetric(horizontal: 80),
+            backgroundColor: Colors.amber,
+            foregroundColor: Colors.purple,
+            textStyle: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+      ),
     );
   }
 }
