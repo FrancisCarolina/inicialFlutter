@@ -19,10 +19,11 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text('Aula Hoje'),
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
       ),
-      body: IconButton(
+      body: FloatingActionButton(
         onPressed: () {},
-        icon: Icon(Icons.ac_unit),
-        iconSize: 100,
+        child: Column(
+          children: [Text("Teste"), Icon(Icons.bakery_dining)],
+        ),
       ),
     );
   }
