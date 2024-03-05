@@ -1,4 +1,3 @@
-
 import 'dart:html';
 
 import 'package:flutter/material.dart';
@@ -17,20 +16,10 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Aula Hoje'), 
+        title: Text('Aula Hoje'),
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-      ), body: Container(
-          child: ClipRRect(
-              child: Image.network(
-                "https://upload.wikimedia.org/wikipedia/pt/e/e5/MonsterHigh_Characters.png",
-                fit: BoxFit.cover,
-              ),
-              borderRadius: BorderRadius.circular(100),
-          ),
-          padding: EdgeInsets.only(left: 80, top: 90),
-          color: Colors.purple,
-          margin: EdgeInsets.only(right: 60),
       ),
+      body: Container(),
     );
   }
 }
