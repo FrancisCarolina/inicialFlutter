@@ -19,8 +19,9 @@ class _MyHomePageState extends State<MyHomePage> {
           title: Text('Aula Hoje'),
           backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         ),
-        body: Row(
+        body: Column(
           mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             FloatingActionButton(
               onPressed: () {},
