@@ -18,115 +18,15 @@ class _MyHomePageState extends State<MyHomePage> {
         appBar: AppBar(
           title: Text('Aula Hoje'),
           backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        ),
-        body: Row(
-          children: [
-            SingleChildScrollView(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  FloatingActionButton(
-                    onPressed: () {},
-                    child: Icon(Icons.water),
-                  ),
-                  FloatingActionButton(
-                    onPressed: () {},
-                    child: Icon(Icons.add),
-                  ),
-                  FloatingActionButton(
-                    onPressed: () {},
-                    child: Icon(Icons.water),
-                  ),
-                  FloatingActionButton(
-                    onPressed: () {},
-                    child: Icon(Icons.add),
-                  ),
-                  FloatingActionButton(
-                    onPressed: () {},
-                    child: Icon(Icons.water),
-                  ),
-                  FloatingActionButton(
-                    onPressed: () {},
-                    child: Icon(Icons.add),
-                  ),
-                  FloatingActionButton(
-                    onPressed: () {},
-                    child: Icon(Icons.water),
-                  ),
-                  FloatingActionButton(
-                    onPressed: () {},
-                    child: Icon(Icons.add),
-                  ),
-                  FloatingActionButton(
-                    onPressed: () {},
-                    child: Icon(Icons.water),
-                  ),
-                  FloatingActionButton(
-                    onPressed: () {},
-                    child: Icon(Icons.add),
-                  ),
-                  FloatingActionButton(
-                    onPressed: () {},
-                    child: Icon(Icons.water),
-                  ),
-                  FloatingActionButton(
-                    onPressed: () {},
-                    child: Icon(Icons.add),
-                  ),
-                  FloatingActionButton(
-                    onPressed: () {},
-                    child: Icon(Icons.water),
-                  ),
-                  FloatingActionButton(
-                    onPressed: () {},
-                    child: Icon(Icons.add),
-                  ),
-                  FloatingActionButton(
-                    onPressed: () {},
-                    child: Icon(Icons.water),
-                  ),
-                  FloatingActionButton(
-                    onPressed: () {},
-                    child: Icon(Icons.add),
-                  ),
-                  FloatingActionButton(
-                    onPressed: () {},
-                    child: Icon(Icons.water),
-                  ),
-                  FloatingActionButton(
-                    onPressed: () {},
-                    child: Icon(Icons.add),
-                  ),
-                  FloatingActionButton(
-                    onPressed: () {},
-                    child: Icon(Icons.water),
-                  ),
-                  FloatingActionButton(
-                    onPressed: () {},
-                    child: Icon(Icons.add),
-                  ),
-                  FloatingActionButton(
-                    onPressed: () {},
-                    child: Icon(Icons.water),
-                  ),
-                  FloatingActionButton(
-                    onPressed: () {},
-                    child: Icon(Icons.add),
-                  ),
-                  FloatingActionButton(
-                    onPressed: () {},
-                    child: Icon(Icons.water),
-                  ),
-                  FloatingActionButton(
-                    onPressed: () {},
-                    child: Icon(Icons.add),
-                  ),
-                ],
-              ),
-            ),
-            Text("teste de scroll")
+          leading: IconButton(
+            onPressed: () {},
+            icon: Icon(Icons.file_copy),
+          ),
+          actions: [
+            IconButton(onPressed: () {}, icon: Icon(Icons.star)),
+            IconButton(onPressed: () {}, icon: Icon(Icons.favorite))
           ],
-        ));
+        ),
+        body: Row(children: [Text("teste")]));
   }
 }
