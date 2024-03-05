@@ -41,7 +41,26 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
         floatingActionButton: FloatingActionButton(
           onPressed: () {},
-          child: Icon(Icons.refresh),
+          child: Icon(
+            Icons.refresh,
+            size: 25,
+          ),
+          shape: CircleBorder(),
+        ),
+        floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+        bottomNavigationBar: BottomAppBar(
+          color: Colors.lightBlueAccent,
+          notchMargin: 7,
+          shape: const CircularNotchedRectangle(),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              IconButton(onPressed: () {}, icon: Icon(Icons.home)),
+              IconButton(onPressed: () {}, icon: Icon(Icons.search)),
+              IconButton(onPressed: () {}, icon: Icon(Icons.settings)),
+              IconButton(onPressed: () {}, icon: Icon(Icons.person)),
+            ],
+          ),
         ),
         body: Row(children: [Text('texto')]));
   }
