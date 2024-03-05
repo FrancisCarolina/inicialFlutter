@@ -20,13 +20,12 @@ class _MyHomePageState extends State<MyHomePage> {
           backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         ),
         body: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            SizedBox(width: 10),
             FloatingActionButton(
               onPressed: () {},
               child: Icon(Icons.water),
             ),
-            SizedBox(width: 10),
             FloatingActionButton(
               onPressed: () {},
               child: Icon(Icons.add),
