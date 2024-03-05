@@ -79,7 +79,7 @@ class _MyHomePageState extends State<MyHomePage> {
           ],
         ),
       ),
-      body: Row(children: [Text('texto')]),
+      body: Card(child: Text("Tads22"), color: Colors.blueGrey),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       bottomNavigationBar: BottomAppBar(
         color: Colors.lightBlueAccent,
