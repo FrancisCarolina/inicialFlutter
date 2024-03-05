@@ -24,9 +24,21 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
           actions: [
             IconButton(onPressed: () {}, icon: Icon(Icons.star)),
-            IconButton(onPressed: () {}, icon: Icon(Icons.favorite))
+            IconButton(onPressed: () {}, icon: Icon(Icons.favorite)),
+            PopupMenuButton(
+              itemBuilder: (context) {
+                return [
+                  PopupMenuItem<int>(value: 0, child: Text("MyAcconut")),
+                  PopupMenuItem<int>(value: 1, child: Text("Settings")),
+                  PopupMenuItem<int>(value: 2, child: Text("Logout")),
+                ];
+              },
+              onSelected: (value) {
+                //aqui
+              },
+            )
           ],
         ),
-        body: Row(children: [Text("teste")]));
+        body: Row(children: [Text('texto')]));
   }
 }
