@@ -79,7 +79,25 @@ class _MyHomePageState extends State<MyHomePage> {
           ],
         ),
       ),
-      body: Card(child: Text("Tads22"), color: Colors.blueGrey),
+      body: Center(
+          child: Card(
+        elevation: 5,
+        color: Colors.lightGreen,
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+        child: Padding(
+          padding: const EdgeInsets.all(20),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Icon(Icons.person),
+              Text(
+                "Dispositivos Moveis",
+                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+              )
+            ],
+          ),
+        ),
+      )),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       bottomNavigationBar: BottomAppBar(
         color: Colors.lightBlueAccent,
