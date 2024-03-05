@@ -19,7 +19,7 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text('Aula Hoje'),
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
       ),
-      body: OutlinedButton(
+      body: TextButton(
         onPressed: () {},
         child: Text('Dispositivos Moveis'),
       ),
