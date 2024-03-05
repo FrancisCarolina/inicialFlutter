@@ -19,14 +19,14 @@ class _MyHomePageState extends State<MyHomePage> {
           title: Text('Aula Hoje'),
           backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         ),
-        body: Column(
+        body: Row(
           children: [
-            SizedBox(height: 10),
+            SizedBox(width: 10),
             FloatingActionButton(
               onPressed: () {},
               child: Icon(Icons.water),
             ),
-            SizedBox(height: 10),
+            SizedBox(width: 10),
             FloatingActionButton(
               onPressed: () {},
               child: Icon(Icons.add),
