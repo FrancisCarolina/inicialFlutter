@@ -29,6 +29,8 @@ class _MyHomePageState extends State<MyHomePage> {
     //fazer if de ganho
     return 'Voce Venceu';
   }
+//expanded -> gestureDetecter -> image.assets
+//onTap: () => _joga(imagemName)
 
   @override
   Widget build(BuildContext context) {
