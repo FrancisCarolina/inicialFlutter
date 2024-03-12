@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 
 class MyHomePage extends StatefulWidget {
@@ -10,6 +12,24 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  var _imgApp = Image.asset('images/padrao.png');
+  var _msg = 'Quem venceu o Jogo?';
+
+  void _joga(String escolhaUser) {
+    final listaOp = ['pedra', 'papel', 'tesoura'];
+    final escolhaApp = listaOp[Random().nextInt(3)];
+
+    setState(() {
+      _imgApp = Image.asset('images/$escolhaApp.png');
+      _msg = _resultado(escolhaUser, escolhaApp);
+    });
+  }
+
+  String _resultado(String escolhaUser, String escolhaApp) {
+    //fazer if de ganho
+    return 'Voce Venceu';
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -106,7 +126,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Padding(
-                        padding: const EdgeInsets.only(bottom: 20),
+                        padding: const EdgeInsets.only(bottom: 20, top: 5),
                         child: Text(
                           "Titulo Lorem",
                           style: TextStyle(
@@ -132,12 +152,11 @@ class _MyHomePageState extends State<MyHomePage> {
                   ClipOval(
                     child: Image.network(
                       "https://upload.wikimedia.org/wikipedia/pt/e/e5/MonsterHigh_Characters.png",
-                      width: 100,
-                      height: 100,
+                      width: 90,
+                      height: 90,
                       fit: BoxFit.cover,
                     ),
                   ),
-                  //"https://upload.wikimedia.org/wikipedia/pt/e/e5/MonsterHigh_Characters.png",
                 ],
               ),
               Row(
