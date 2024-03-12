@@ -1,5 +1,3 @@
-import 'dart:html';
-
 import 'package:flutter/material.dart';
 
 class MyHomePage extends StatefulWidget {
@@ -80,19 +78,78 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
       ),
       body: Center(
-          child: Card(
-        elevation: 5,
-        color: Colors.lightGreen,
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+          child: Container(
+        width: 350,
+        decoration: const BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment.centerLeft,
+              end: Alignment.centerRight,
+              colors: <Color>[
+                Color(0xffac255e),
+                Color(0xffca485c),
+                Color(0xffe16b5c),
+                Color(0xfff39060),
+                Color(0xffffb56b),
+              ],
+            ),
+            borderRadius: BorderRadius.all(Radius.circular(10))),
         child: Padding(
           padding: const EdgeInsets.all(20),
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              Icon(Icons.person),
-              Text(
-                "Dispositivos Moveis",
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(bottom: 20),
+                        child: Text(
+                          "Titulo Lorem",
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, fontSize: 20),
+                        ),
+                      ),
+                      Padding(
+                          padding: const EdgeInsets.only(bottom: 20),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                "Texto sobre",
+                                style: TextStyle(fontSize: 18),
+                              ),
+                              Text(
+                                "Texto sobre",
+                              ),
+                            ],
+                          ))
+                    ],
+                  ),
+                  ClipOval(
+                    child: Image.network(
+                      "https://upload.wikimedia.org/wikipedia/pt/e/e5/MonsterHigh_Characters.png",
+                      width: 100,
+                      height: 100,
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                  //"https://upload.wikimedia.org/wikipedia/pt/e/e5/MonsterHigh_Characters.png",
+                ],
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Row(
+                    children: [Icon(Icons.phone), Text("41 99999-9999")],
+                  ),
+                  Row(
+                    children: [Icon(Icons.mail), Text("email@gmail.com")],
+                  )
+                ],
               )
             ],
           ),
