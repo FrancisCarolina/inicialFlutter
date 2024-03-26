@@ -116,7 +116,13 @@ class _MyHomePageState extends State<MyHomePage> {
 
   Column placar(String text, String qnt) {
     return Column(
-      children: [Text(text), Text(qnt)],
+      children: [
+        Text(
+          text,
+          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
+        ),
+        Text(qnt)
+      ],
     );
   }
 
