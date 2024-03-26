@@ -92,7 +92,7 @@ class _MyHomePageState extends State<MyHomePage> {
     return GestureDetector(
       onTap: () => _joga(imageName),
       child: Image.asset(
-        'assets/images/${imageName}.png',
+        'assets/images/$imageName.png',
         height: 100,
       ),
     );
