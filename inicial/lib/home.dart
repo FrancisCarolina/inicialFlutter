@@ -57,10 +57,19 @@ class _MyHomePageState extends State<MyHomePage> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           textComponent("Escolha App"),
+          SizedBox(
+            height: 20,
+          ),
           _imgApp,
+          SizedBox(
+            height: 20,
+          ),
           textComponent(_msg),
+          SizedBox(
+            height: 20,
+          ),
           Row(
-            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               chooseUser("pedra"),
               chooseUser("papel"),
@@ -75,7 +84,10 @@ class _MyHomePageState extends State<MyHomePage> {
   GestureDetector chooseUser(String imageName) {
     return GestureDetector(
       onTap: () => _joga(imageName),
-      child: Image.asset('assets/images/${imageName}.png'),
+      child: Image.asset(
+        'assets/images/${imageName}.png',
+        height: 100,
+      ),
     );
   }
 
