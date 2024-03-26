@@ -17,10 +17,10 @@ class _MyHomePageState extends State<MyHomePage> {
   int _vitoriaUser = 0;
   int _vitoriaApp = 0;
   int _empate = 0;
+  var list = ['pedra', 'papel', 'tesoura'];
 
   void _joga(String escolhaUser) {
-    final listaOp = ['pedra', 'papel', 'tesoura'];
-    final escolhaApp = listaOp[Random().nextInt(3)];
+    final escolhaApp = list[Random().nextInt(3)];
 
     setState(() {
       _imgApp = Image.asset('assets/images/$escolhaApp.png');
@@ -91,13 +91,8 @@ class _MyHomePageState extends State<MyHomePage> {
             height: 20,
           ),
           Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              chooseUser("pedra"),
-              chooseUser("papel"),
-              chooseUser("tesoura"),
-            ],
-          ),
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: list.map((e) => chooseUser(e)).toList()),
           SizedBox(
             height: 20,
           ),
