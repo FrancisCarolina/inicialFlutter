@@ -60,6 +60,10 @@ flutter:
   uses-material-design: true
   assets:
     - assets/images/image.jpg
+    - assets/images/pedra.png
+    - assets/images/papel.png
+    - assets/images/tesoura.png
+    - assets/images/padrao.png
 
   # To add assets to your application, add an assets section, like this:
   # assets:

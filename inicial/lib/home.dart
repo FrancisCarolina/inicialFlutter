@@ -12,7 +12,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  var _imgApp = Image.asset('images/padrao.png');
+  var _imgApp = Image.asset('assets/images/padrao.png');
   var _msg = 'Quem venceu o Jogo?';
 
   void _joga(String escolhaUser) {
@@ -20,40 +20,29 @@ class _MyHomePageState extends State<MyHomePage> {
     final escolhaApp = listaOp[Random().nextInt(3)];
 
     setState(() {
-      _imgApp = Image.asset('images/$escolhaApp.png');
+      _imgApp = Image.asset('assets/images/$escolhaApp.png');
       _msg = _resultado(escolhaUser, escolhaApp);
     });
   }
 
   String _resultado(String escolhaUser, String escolhaApp) {
-    //fazer if de ganho
-    return 'Voce Venceu';
+    if (escolhaUser == escolhaApp) {
+      return "Empatou";
+    } else if ((escolhaApp == 'pedra' && escolhaUser == 'tesoura') ||
+        (escolhaApp == 'tesoura' && escolhaUser == 'papel') ||
+        (escolhaApp == 'papel' && escolhaUser == 'pedra')) {
+      return 'App Venceu';
+    } else {
+      return 'Voce Venceu';
+    }
   }
-//expanded -> gestureDetecter -> image.assets
-//onTap: () => _joga(imagemName)
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Aula Hoje'),
+        title: Text('Jokenpo TADS 22'),
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        actions: [
-          IconButton(onPressed: () {}, icon: Icon(Icons.star)),
-          IconButton(onPressed: () {}, icon: Icon(Icons.favorite)),
-          PopupMenuButton(
-            itemBuilder: (context) {
-              return [
-                PopupMenuItem<int>(value: 0, child: Text("MyAcconut")),
-                PopupMenuItem<int>(value: 1, child: Text("Settings")),
-                PopupMenuItem<int>(value: 2, child: Text("Logout")),
-              ];
-            },
-            onSelected: (value) {
-              //aqui
-            },
-          )
-        ],
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
@@ -63,134 +52,37 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
         shape: CircleBorder(),
       ),
-      drawer: Drawer(
-        child: ListView(
-          children: [
-            ListTile(
-              leading: Icon(Icons.open_with_rounded),
-              title: Text('Item 1'),
-              onTap: () {},
-            ),
-            ListTile(
-              leading: Icon(Icons.dialer_sip_rounded),
-              title: Text('Item 2'),
-              onTap: () {},
-            ),
-            Divider(
-              height: 10,
-            ),
-            ExpansionTile(
-              childrenPadding: EdgeInsets.only(left: 30),
-              title: Text("Lista Expansivel"),
-              leading: Icon(Icons.person_add),
-              children: [
-                ListTile(
-                  leading: Icon(Icons.dialer_sip_rounded),
-                  title: Text("sub item 1"),
-                  onTap: () {},
-                ),
-                ListTile(
-                  leading: Icon(Icons.sailing),
-                  title: Text("sub item 2"),
-                  onTap: () {},
-                ),
-              ],
-            ),
-          ],
-        ),
-      ),
       body: Center(
-          child: Container(
-        width: 350,
-        decoration: const BoxDecoration(
-            gradient: LinearGradient(
-              begin: Alignment.centerLeft,
-              end: Alignment.centerRight,
-              colors: <Color>[
-                Color(0xffac255e),
-                Color(0xffca485c),
-                Color(0xffe16b5c),
-                Color(0xfff39060),
-                Color(0xffffb56b),
-              ],
-            ),
-            borderRadius: BorderRadius.all(Radius.circular(10))),
-        child: Padding(
-          padding: const EdgeInsets.all(20),
           child: Column(
-            mainAxisSize: MainAxisSize.min,
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          textComponent("Escolha App"),
+          _imgApp,
+          textComponent(_msg),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.only(bottom: 20, top: 5),
-                        child: Text(
-                          "Titulo Lorem",
-                          style: TextStyle(
-                              fontWeight: FontWeight.bold, fontSize: 20),
-                        ),
-                      ),
-                      Padding(
-                          padding: const EdgeInsets.only(bottom: 20),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                "Texto sobre",
-                                style: TextStyle(fontSize: 18),
-                              ),
-                              Text(
-                                "Texto sobre",
-                              ),
-                            ],
-                          ))
-                    ],
-                  ),
-                  ClipOval(
-                    child: Image.network(
-                      "https://upload.wikimedia.org/wikipedia/pt/e/e5/MonsterHigh_Characters.png",
-                      width: 90,
-                      height: 90,
-                      fit: BoxFit.cover,
-                    ),
-                  ),
-                ],
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Row(
-                    children: [Icon(Icons.phone), Text("41 99999-9999")],
-                  ),
-                  Row(
-                    children: [Icon(Icons.mail), Text("email@gmail.com")],
-                  )
-                ],
-              )
+              chooseUser("pedra"),
+              chooseUser("papel"),
+              chooseUser("tesoura"),
             ],
-          ),
-        ),
+          )
+        ],
       )),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      bottomNavigationBar: BottomAppBar(
-        color: Colors.lightBlueAccent,
-        notchMargin: 7,
-        shape: const CircularNotchedRectangle(),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: [
-            IconButton(onPressed: () {}, icon: Icon(Icons.home)),
-            IconButton(onPressed: () {}, icon: Icon(Icons.search)),
-            IconButton(onPressed: () {}, icon: Icon(Icons.settings)),
-            IconButton(onPressed: () {}, icon: Icon(Icons.person)),
-          ],
-        ),
-      ),
+    );
+  }
+
+  GestureDetector chooseUser(String imageName) {
+    return GestureDetector(
+      onTap: () => _joga(imageName),
+      child: Image.asset('assets/images/${imageName}.png'),
+    );
+  }
+
+  Text textComponent(String text) {
+    return Text(
+      text,
+      style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22),
     );
   }
 }
