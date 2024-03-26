@@ -13,7 +13,7 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   var _imgApp = Image.asset('assets/images/padrao.png');
-  var _msg = 'Quem venceu o Jogo?';
+  var _msg = 'Quem vence o Jogo?';
 
   void _joga(String escolhaUser) {
     final listaOp = ['pedra', 'papel', 'tesoura'];
@@ -37,6 +37,13 @@ class _MyHomePageState extends State<MyHomePage> {
     }
   }
 
+  void _restartGame() {
+    setState(() {
+      _imgApp = Image.asset('assets/images/padrao.png');
+      _msg = 'Quem vence o Jogo?';
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -45,7 +52,7 @@ class _MyHomePageState extends State<MyHomePage> {
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: _restartGame,
         child: Icon(
           Icons.refresh,
           size: 25,
