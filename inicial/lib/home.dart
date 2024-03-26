@@ -13,7 +13,10 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   var _imgApp = Image.asset('assets/images/padrao.png');
-  var _msg = 'Quem vence o Jogo?';
+  String _msg = 'Quem vence o Jogo?';
+  int _vitoriaUser = 0;
+  int _vitoriaApp = 0;
+  int _empate = 0;
 
   void _joga(String escolhaUser) {
     final listaOp = ['pedra', 'papel', 'tesoura'];
@@ -27,12 +30,21 @@ class _MyHomePageState extends State<MyHomePage> {
 
   String _resultado(String escolhaUser, String escolhaApp) {
     if (escolhaUser == escolhaApp) {
+      setState(() {
+        _empate = _empate + 1;
+      });
       return "Empatou";
     } else if ((escolhaApp == 'pedra' && escolhaUser == 'tesoura') ||
         (escolhaApp == 'tesoura' && escolhaUser == 'papel') ||
         (escolhaApp == 'papel' && escolhaUser == 'pedra')) {
+      setState(() {
+        _vitoriaApp = _vitoriaApp + 1;
+      });
       return 'App Venceu';
     } else {
+      setState(() {
+        _vitoriaUser = _vitoriaUser + 1;
+      });
       return 'Voce Venceu';
     }
   }
@@ -41,6 +53,9 @@ class _MyHomePageState extends State<MyHomePage> {
     setState(() {
       _imgApp = Image.asset('assets/images/padrao.png');
       _msg = 'Quem vence o Jogo?';
+      _vitoriaUser = 0;
+      _vitoriaApp = 0;
+      _empate = 0;
     });
   }
 
@@ -82,9 +97,26 @@ class _MyHomePageState extends State<MyHomePage> {
               chooseUser("papel"),
               chooseUser("tesoura"),
             ],
+          ),
+          SizedBox(
+            height: 20,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              placar("Vitórias", '$_vitoriaUser'),
+              placar("Empates", '$_empate'),
+              placar("Derrotas", '$_vitoriaApp')
+            ],
           )
         ],
       )),
+    );
+  }
+
+  Column placar(String text, String qnt) {
+    return Column(
+      children: [Text(text), Text(qnt)],
     );
   }
 
